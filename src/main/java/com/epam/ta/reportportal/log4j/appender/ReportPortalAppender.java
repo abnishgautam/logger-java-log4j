@@ -100,11 +100,7 @@ public class ReportPortalAppender extends AppenderSkeleton {
 
 					} else {
 						// Plain string message is reported
-						if (ReportPortalAppender.this.layout == null) {
-							logMessage = event.getRenderedMessage();
-						} else {
-							logMessage = ReportPortalAppender.this.layout.format(event).concat(throwable.toString());
-						}
+						logMessage = event.getRenderedMessage();
 					}
 
 				} catch (IOException e) {

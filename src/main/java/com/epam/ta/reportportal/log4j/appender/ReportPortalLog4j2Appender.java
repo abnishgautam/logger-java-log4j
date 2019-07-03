@@ -125,7 +125,7 @@ public class ReportPortalLog4j2Appender extends AbstractAppender {
                         message = rpMessage.getMessage();
                         byteSource = rpMessage.getData();
                     } else {
-                        message = new String(getLayout().toByteArray(event), Charsets.UTF_8);
+                        message = eventMessage.getFormattedMessage();
                     }
 
                     if (null != byteSource) {
